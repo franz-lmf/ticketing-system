@@ -49,7 +49,7 @@ export default function CartSidebar({ isOpen, onClose }: CartSidebarProps) {
             {items.map((item, idx) => (
               <li key={idx} className={`flex justify-between items-center${idx !== items.length - 1 ? " mb-4" : ""}`}>
                 <div className="flex items-center">
-                  <Button isIconOnly aria-label="Remove from cart" color=""
+                  <Button isIconOnly aria-label="Remove from cart" color={undefined}
                     className=" mr-1"
                     onPress={() => {
                       dispatch(removeFromCart(item))
@@ -58,7 +58,7 @@ export default function CartSidebar({ isOpen, onClose }: CartSidebarProps) {
                   </Button>
                   {item.quantity}
 
-                  <Button isIconOnly aria-label="Add more to cart" color=""
+                  <Button isIconOnly aria-label="Add more to cart" color={undefined}
                     className="ml-1 mr-2"
                     onPress={() => {
                       dispatch(addToCart(item));
@@ -78,7 +78,7 @@ export default function CartSidebar({ isOpen, onClose }: CartSidebarProps) {
       </div >
       {items.length > 0 && (<div className="p-4 border-t border-gray-200 dark:border-gray-700">
         <span className="text-sm">Want to start over?
-          <Button variant="text" className="ml-1 px-1 font-bold text-red-600 hover:text-red-800 dark:text-red-400 dark:hover:text-red-200"
+          <Button variant={undefined} className="ml-1 px-1 font-bold text-red-600 hover:text-red-800 dark:text-red-400 dark:hover:text-red-200"
             onPress={() => {
               dispatch(clearCart());
               onClose();
