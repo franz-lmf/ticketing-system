@@ -61,8 +61,8 @@ export default function CartSidebar({ isOpen, onClose }: CartSidebarProps) {
                   <Button
                     isIconOnly
                     aria-label="Remove from cart"
-                    className=" mr-1"
-                    color={undefined}
+                    className="mr-1 bg-transparent"
+                    variant="flat"
                     onPress={() => {
                       dispatch(removeFromCart(item));
                     }}
@@ -74,8 +74,8 @@ export default function CartSidebar({ isOpen, onClose }: CartSidebarProps) {
                   <Button
                     isIconOnly
                     aria-label="Add more to cart"
-                    className="ml-1 mr-2"
-                    color={undefined}
+                    className="ml-1 mr-2 bg-transparent"
+                    variant="flat"
                     onPress={() => {
                       dispatch(addToCart(item));
                     }}
@@ -96,8 +96,8 @@ export default function CartSidebar({ isOpen, onClose }: CartSidebarProps) {
           <span className="text-sm">
             Want to start over?
             <Button
-              className="ml-1 px-1 font-bold text-red-600 hover:text-red-800 dark:text-red-400 dark:hover:text-red-200"
-              variant={undefined}
+              className="ml-1 px-1 font-bold text-red-600 hover:text-red-500 dark:text-red-400 dark:hover:text-red-200 bg-transparent"
+              variant="flat"
               onPress={() => {
                 dispatch(clearCart());
                 onClose();
