@@ -1,29 +1,19 @@
 "use client";
 
 import { Card, CardFooter } from "@heroui/card";
-
-import { TicketDetails } from "@/interfaces/ticket.interface";
-import Btn, { BTN_TYPES } from "@/components/Button";
 import { Button } from "@heroui/button";
 
-
-import {
-  addToCart,
-  removeFromCart,
-  clearCart,
-  selectCartItems,
-  selectTotalPrice,
-} from "@/lib/cart/cartSlice";
-
-import { useAppDispatch, useAppSelector } from "@/lib/hooks";
 import TicketIcon from "./icons/TicketIcon";
+
+import { TicketDetails } from "@/interfaces/ticket.interface";
+import { addToCart, selectTotalPrice } from "@/lib/cart/cartSlice";
+import { useAppDispatch, useAppSelector } from "@/lib/hooks";
 
 export default function Ticket({
   title,
   price,
   description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
 }: TicketDetails) {
-
   const dispatch = useAppDispatch();
   const cartTotalPrice = useAppSelector(selectTotalPrice);
 
@@ -37,12 +27,17 @@ export default function Ticket({
         }}>
           <span>₱{price.toFixed(2)}</span>
         </Btn> */}
-        <Button className="w-full" color="success" startContent={<TicketIcon isOutline={false} />} onPress={() => {
-          dispatch(addToCart({ title, price }));
-        }}>
+        <Button
+          className="w-full"
+          color="success"
+          startContent={<TicketIcon isOutline={false} />}
+          onPress={() => {
+            dispatch(addToCart({ title, price }));
+          }}
+        >
           <span>₱{price.toFixed(2)}</span>
         </Button>
       </CardFooter>
-    </Card >
+    </Card>
   );
 }

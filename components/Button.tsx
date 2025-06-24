@@ -56,10 +56,7 @@ export const AddToCartIcon = ({
   width?: number;
 }) => {
   return (
-    <svg
-      {...AddEditIconProps}
-      {...props}
-    >
+    <svg {...AddEditIconProps} {...props}>
       <path
         d="M12 4.5v15m7.5-7.5h-15"
         strokeLinecap="round"
@@ -82,10 +79,7 @@ export const RemoveFromCartIcon = ({
   width?: number;
 }) => {
   return (
-    <svg
-      {...AddEditIconProps}
-      {...props}
-    >
+    <svg {...AddEditIconProps} {...props}>
       <path d="M5 12h14" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
@@ -125,7 +119,6 @@ export default function Btn({
   iconProps?: any;
   children: ReactNode;
 }) {
-
   const btnComponent = getIconFromBtnType(btnType, iconProps);
 
   // Add size prop to the icon if iconSize is provided
