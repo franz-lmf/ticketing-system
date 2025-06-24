@@ -8,8 +8,8 @@ export const SITE_HREF = {
 }
 
 export const siteConfig = {
-  name: 'Next.js + HeroUI',
-  description: 'Make beautiful websites regardless of your design experience.',
+  name: 'Ticketing System',
+  description: 'Dummy ticketing system built with Hero UI, Next.js, and Redux Toolkit',
   navItems: [
     // {
     //   label: 'Home',
