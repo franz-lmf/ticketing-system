@@ -1,3 +1,5 @@
+'use client'
+
 import {
   Navbar as HeroUINavbar,
   NavbarContent,
@@ -26,6 +28,21 @@ import {
   Logo,
 } from "@/components/icons";
 
+
+import { useState } from "react";
+import CartSidebar from "@/components/CartSidebar";
+import {
+  addToCart,
+  removeFromCart,
+  clearCart,
+  selectCartItems,
+  selectTotalPrice,
+} from "@/lib/cart/cartSlice";
+import Btn, { BTN_TYPES } from "./Button";
+import { useAppDispatch, useAppSelector } from "@/lib/hooks";
+import { usePathname } from "next/navigation";
+import { SITE_HREF } from "@/config/site";
+
 export const Navbar = () => {
   const searchInput = (
     <Input
@@ -48,17 +65,34 @@ export const Navbar = () => {
     />
   );
 
+
+  // Cart state: array of items
+  const [cartItems, setCartItems] = useState<
+    { title: string; price: number; quantity: number }[]
+  >([]);
+  // Sidebar open/close state
+  const [cartOpen, setCartOpen] = useState(false);
+
+
+  const totalPrice = useAppSelector(selectTotalPrice);
+
+  const pathname = usePathname();
+
+  const visibleNavItems = siteConfig.navItems.filter(
+    (item) => item.href !== SITE_HREF.checkout,
+  );
+
   return (
     <HeroUINavbar maxWidth="xl" position="sticky">
       <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
         <NavbarBrand as="li" className="gap-3 max-w-fit">
           <NextLink className="flex justify-start items-center gap-1" href="/">
-            <Logo />
-            <p className="font-bold text-inherit">ACME</p>
+            {/* <Logo /> */}
+            <p className="font-bold text-inherit">LMF</p>
           </NextLink>
         </NavbarBrand>
         <ul className="hidden lg:flex gap-4 justify-start ml-2">
-          {siteConfig.navItems.map((item) => (
+          {visibleNavItems.map((item) => (
             <NavbarItem key={item.href}>
               <NextLink
                 className={clsx(
@@ -75,7 +109,7 @@ export const Navbar = () => {
         </ul>
       </NavbarContent>
 
-      <NavbarContent
+      {/* <NavbarContent
         className="hidden sm:flex basis-1/5 sm:basis-full"
         justify="end"
       >
@@ -104,7 +138,7 @@ export const Navbar = () => {
             Sponsor
           </Button>
         </NavbarItem>
-      </NavbarContent>
+      </NavbarContent> */}
 
       <NavbarContent className="sm:hidden basis-1 pl-4" justify="end">
         <Link isExternal aria-label="Github" href={siteConfig.links.github}>
@@ -136,6 +170,26 @@ export const Navbar = () => {
           ))}
         </div>
       </NavbarMenu>
+
+      {/* <Button
+        onPress={() => setCartOpen(true)}
+        className="text-sm font-normal text-default-600 bg-default-100"
+        color="success"
+      >
+        Open Cart
+      </Button> */}
+
+      {pathname !== SITE_HREF.checkout && (<Btn className="" btnType={BTN_TYPES.cart} color="success" onPress={() => setCartOpen(true)} >
+        <span className="text-sm font-medium">
+          ₱{totalPrice.toFixed(2)}
+        </span>
+      </Btn>)}
+      <CartSidebar
+        isOpen={cartOpen}
+        // items={cartItems}
+        onClose={() => setCartOpen(false)}
+      />
+      <ThemeSwitch />
     </HeroUINavbar>
   );
 };
