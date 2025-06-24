@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import {
   Navbar as HeroUINavbar,
@@ -9,38 +9,23 @@ import {
   NavbarItem,
   NavbarMenuItem,
 } from "@heroui/navbar";
-import { Button } from "@heroui/button";
 import { Kbd } from "@heroui/kbd";
 import { Link } from "@heroui/link";
 import { Input } from "@heroui/input";
 import { link as linkStyles } from "@heroui/theme";
 import NextLink from "next/link";
 import clsx from "clsx";
+import { useState } from "react";
+import { usePathname } from "next/navigation";
+
+import Btn, { BTN_TYPES } from "./Button";
 
 import { siteConfig } from "@/config/site";
 import { ThemeSwitch } from "@/components/theme-switch";
-import {
-  TwitterIcon,
-  GithubIcon,
-  DiscordIcon,
-  HeartFilledIcon,
-  SearchIcon,
-  Logo,
-} from "@/components/icons";
-
-
-import { useState } from "react";
+import { GithubIcon, SearchIcon } from "@/components/icons";
 import CartSidebar from "@/components/CartSidebar";
-import {
-  addToCart,
-  removeFromCart,
-  clearCart,
-  selectCartItems,
-  selectTotalPrice,
-} from "@/lib/cart/cartSlice";
-import Btn, { BTN_TYPES } from "./Button";
-import { useAppDispatch, useAppSelector } from "@/lib/hooks";
-import { usePathname } from "next/navigation";
+import { selectTotalPrice } from "@/lib/cart/cartSlice";
+import { useAppSelector } from "@/lib/hooks";
 import { SITE_HREF } from "@/config/site";
 
 export const Navbar = () => {
@@ -65,14 +50,12 @@ export const Navbar = () => {
     />
   );
 
-
   // Cart state: array of items
   const [cartItems, setCartItems] = useState<
     { title: string; price: number; quantity: number }[]
   >([]);
   // Sidebar open/close state
   const [cartOpen, setCartOpen] = useState(false);
-
 
   const totalPrice = useAppSelector(selectTotalPrice);
 
@@ -179,11 +162,15 @@ export const Navbar = () => {
         Open Cart
       </Button> */}
 
-      {pathname !== SITE_HREF.checkout && (<Btn className="" btnType={BTN_TYPES.cart} color="success" onPress={() => setCartOpen(true)} >
-        <span className="text-sm font-medium">
-          ₱{totalPrice.toFixed(2)}
-        </span>
-      </Btn>)}
+      {pathname !== SITE_HREF.checkout && (
+        <Btn
+          btnType={BTN_TYPES.cart}
+          color="success"
+          onPress={() => setCartOpen(true)}
+        >
+          <span className="text-sm font-medium">₱{totalPrice.toFixed(2)}</span>
+        </Btn>
+      )}
       <CartSidebar
         isOpen={cartOpen}
         // items={cartItems}
