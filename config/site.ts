@@ -1,69 +1,72 @@
-export type SiteConfig = typeof siteConfig;
+export type SiteConfig = typeof siteConfig
+
+export const SITE_HREF = {
+  // home: '/',
+  ticketListings: '/ticket-listings',
+  checkout: '/checkout'
+  // about: '/about'
+}
 
 export const siteConfig = {
-  name: "Next.js + HeroUI",
-  description: "Make beautiful websites regardless of your design experience.",
+  name: 'Next.js + HeroUI',
+  description: 'Make beautiful websites regardless of your design experience.',
   navItems: [
+    // {
+    //   label: 'Home',
+    //   href: SITE_HREF.home
+    // },
     {
-      label: "Home",
-      href: "/",
+      label: 'Ticket Listings',
+      href: SITE_HREF.ticketListings
     },
     {
-      label: "Docs",
-      href: "/docs",
-    },
-    {
-      label: "Pricing",
-      href: "/pricing",
-    },
-    {
-      label: "Blog",
-      href: "/blog",
-    },
-    {
-      label: "About",
-      href: "/about",
-    },
+      label: 'Checkout',
+      href: SITE_HREF.checkout
+    }
+    // {
+    //   label: 'About',
+    //   href: SITE_HREF.about
+    // }
   ],
   navMenuItems: [
     {
-      label: "Profile",
-      href: "/profile",
+      label: 'Profile',
+      href: '/profile'
     },
     {
-      label: "Dashboard",
-      href: "/dashboard",
+      label: 'Dashboard',
+      href: '/dashboard'
     },
     {
-      label: "Projects",
-      href: "/projects",
+      label: 'Projects',
+      href: '/projects'
     },
     {
-      label: "Team",
-      href: "/team",
+      label: 'Team',
+      href: '/team'
     },
     {
-      label: "Calendar",
-      href: "/calendar",
+      label: 'Calendar',
+      href: '/calendar'
     },
     {
-      label: "Settings",
-      href: "/settings",
+      label: 'Settings',
+      href: '/settings'
     },
     {
-      label: "Help & Feedback",
-      href: "/help-feedback",
+      label: 'Help & Feedback',
+      href: '/help-feedback'
     },
     {
-      label: "Logout",
-      href: "/logout",
-    },
+      label: 'Logout',
+      href: '/logout'
+    }
   ],
   links: {
-    github: "https://github.com/heroui-inc/heroui",
-    twitter: "https://twitter.com/hero_ui",
-    docs: "https://heroui.com",
-    discord: "https://discord.gg/9b6yyZKmH4",
-    sponsor: "https://patreon.com/jrgarciadev",
-  },
-};
+    github: 'https://github.com/heroui-inc/heroui',
+    twitter: 'https://twitter.com/hero_ui',
+    docs: 'https://heroui.com',
+    discord: 'https://discord.gg/9b6yyZKmH4',
+    sponsor: 'https://patreon.com/jrgarciadev'
+  }
+}
