@@ -23,7 +23,6 @@ import Btn, { BTN_TYPES } from "./Button";
 import { siteConfig } from "@/config/site";
 import { ThemeSwitch } from "@/components/theme-switch";
 import { GithubIcon, SearchIcon } from "@/components/icons";
-import CartSidebar from "@/components/CartSidebar";
 import { selectTotalPrice } from "@/lib/cart/cartSlice";
 import { useAppSelector } from "@/lib/hooks";
 import { SITE_HREF } from "@/config/site";
@@ -49,13 +48,6 @@ export const Navbar = () => {
       type="search"
     />
   );
-
-  // Cart state: array of items
-  const [cartItems, setCartItems] = useState<
-    { title: string; price: number; quantity: number }[]
-  >([]);
-  // Sidebar open/close state
-  const [cartOpen, setCartOpen] = useState(false);
 
   const totalPrice = useAppSelector(selectTotalPrice);
 
@@ -171,11 +163,6 @@ export const Navbar = () => {
           <span className="text-sm font-medium">₱{totalPrice.toFixed(2)}</span>
         </Btn>
       )}
-      <CartSidebar
-        isOpen={cartOpen}
-        // items={cartItems}
-        onClose={() => setCartOpen(false)}
-      />
       <ThemeSwitch />
     </HeroUINavbar>
   );

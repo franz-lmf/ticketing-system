@@ -1,6 +1,7 @@
 import "@/styles/globals.css";
 import { Metadata, Viewport } from "next";
 import clsx from "clsx";
+import { useSelector } from "react-redux";
 
 import { Providers } from "./providers";
 import { StoreProvider } from "./StoreProvider";
@@ -8,6 +9,8 @@ import { StoreProvider } from "./StoreProvider";
 import { siteConfig } from "@/config/site";
 import { fontSans } from "@/config/fonts";
 import { Navbar } from "@/components/navbar";
+import CartSidebar from "@/components/CartSidebar";
+import { selectIsSidebarOpen } from "@/lib/ui/cartSidebar/cartSidebarSlice";
 
 export const metadata: Metadata = {
   title: {
@@ -32,6 +35,8 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const isSidebarOpen = useSelector(selectIsSidebarOpen);
+
   return (
     <StoreProvider>
       <html suppressHydrationWarning lang="en">
@@ -45,6 +50,8 @@ export default function RootLayout({
           <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
             <div className="relative flex flex-col h-screen">
               <Navbar />
+
+              <CartSidebar isOpen={isSidebarOpen} />
               <main className="container mx-auto max-w-7xl pt-16 px-6 flex-grow">
                 {children}
               </main>
