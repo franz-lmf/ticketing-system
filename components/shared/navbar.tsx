@@ -15,19 +15,20 @@ import { Input } from "@heroui/input";
 import { link as linkStyles } from "@heroui/theme";
 import NextLink from "next/link";
 import clsx from "clsx";
-import { useState } from "react";
 import { usePathname } from "next/navigation";
 
-import Btn, { BTN_TYPES } from "./Button";
+import Btn, { BTN_TYPES } from "../Button";
 
 import { siteConfig } from "@/config/site";
 import { ThemeSwitch } from "@/components/theme-switch";
-import { GithubIcon, SearchIcon } from "@/components/icons";
-import { selectTotalPrice } from "@/lib/cart/cartSlice";
-import { useAppSelector } from "@/lib/hooks";
+import { GithubIcon, SearchIcon } from "@/components/shared/icons";
+import { selectTotalPrice } from "@/lib/ui/cart/cartSlice";
+import { useAppDispatch, useAppSelector } from "@/lib/hooks";
 import { SITE_HREF } from "@/config/site";
+import { openCartSidebar, toogleCartSidebar } from "@/lib/ui/cartSidebar/cartSidebarSlice";
 
 export const Navbar = () => {
+  const dispatch = useAppDispatch();
   const searchInput = (
     <Input
       aria-label="Search"
@@ -158,7 +159,7 @@ export const Navbar = () => {
         <Btn
           btnType={BTN_TYPES.cart}
           color="success"
-          onPress={() => setCartOpen(true)}
+          onPress={() => dispatch(toogleCartSidebar())}
         >
           <span className="text-sm font-medium">₱{totalPrice.toFixed(2)}</span>
         </Btn>
