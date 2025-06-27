@@ -1,4 +1,4 @@
-export default function PlusIconCircle({
+export default function TicketIcon({
   fill = "currentColor",
   isOutline = false,
   ...props
