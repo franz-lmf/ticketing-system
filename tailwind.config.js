@@ -13,6 +13,14 @@ const config = {
         sans: ["var(--font-sans)"],
         mono: ["var(--font-mono)"],
       },
+      colors: {
+        'custom-background': '#0E102D',
+        'custom-primary': '#0e102d',
+        'custom-secondary': '#1a1c3d',
+        'custom-accent': '#D1601E',
+        'custom-accent-secondary': '#273890',
+        'custom-background-secondary': '#2BOFOE',
+      }
     },
   },
   darkMode: "class",
