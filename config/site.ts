@@ -1,7 +1,7 @@
 export type SiteConfig = typeof siteConfig;
 
 export const SITE_HREF = {
-  // home: '/',
+  home: "/",
   ticketListings: "/ticket-listings",
   checkout: "/checkout",
   // about: '/about'
