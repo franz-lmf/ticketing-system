@@ -39,13 +39,13 @@ export default function RootLayout({
       <html suppressHydrationWarning lang="en">
         <head />
         <body
-          className={clsx(
+          className={`${clsx(
             "min-h-screen text-foreground bg-background font-sans antialiased",
             fontSans.variable,
-          )}
+          )}  bg-[url(/img/rock-band-splash.jpg)] bg-cover bg-center bg-no-repeat `}
         >
           <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
-            <div className="relative flex flex-col h-screen">
+            <div className="relative flex flex-col h-screen backdrop-blur-none bg-white/30 dark:bg-black/30">
               <Navbar />
 
               <CartSidebar />
