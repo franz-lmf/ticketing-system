@@ -1,3 +1,3 @@
 export interface CartSidebarProps {
-  isOpen: boolean
+  isOpen: boolean;
 }

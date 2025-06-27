@@ -1,8 +1,9 @@
 import { combineSlices, configureStore } from "@reduxjs/toolkit";
 
-import { cartSlice } from "@/lib/cart/cartSlice";
+import { cartSlice } from "@/lib/ui/cart/cartSlice";
+import { cartSidebarSlice } from "@/lib/ui/cartSidebar/cartSidebarSlice";
 
-const rootReducer = combineSlices(cartSlice);
+const rootReducer = combineSlices(cartSlice, cartSidebarSlice);
 
 export const makeStore = () => {
   return configureStore({
