@@ -7,7 +7,7 @@ import { Card } from "@heroui/card";
 
 import { title } from "@/components/primitives";
 import { useAppSelector } from "@/lib/hooks";
-import { selectTotalPrice } from "@/lib/cart/cartSlice";
+import { selectTotalPrice } from "@/lib/ui/cart/cartSlice";
 
 export default function CheckoutPage() {
   const totalPrice = useAppSelector(selectTotalPrice);

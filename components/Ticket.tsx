@@ -6,7 +6,7 @@ import { Button } from "@heroui/button";
 import TicketIcon from "./icons/TicketIcon";
 
 import { TicketDetails } from "@/interfaces/ticket.interface";
-import { addToCart, selectTotalPrice } from "@/lib/cart/cartSlice";
+import { addToCart, selectTotalPrice } from "@/lib/ui/cart/cartSlice";
 import { useAppDispatch, useAppSelector } from "@/lib/hooks";
 
 export default function Ticket({
