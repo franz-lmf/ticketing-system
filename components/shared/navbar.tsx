@@ -159,6 +159,7 @@ export const Navbar = () => {
         <Btn
           btnType={BTN_TYPES.cart}
           color="success"
+          isIconOnly={totalPrice <= 0}
           onPress={() => dispatch(toogleCartSidebar())}
         >
           <span className="text-sm font-medium">₱{totalPrice.toFixed(2)}</span>
