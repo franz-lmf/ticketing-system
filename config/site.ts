@@ -63,6 +63,33 @@ export const siteConfig = {
       href: "/logout",
     },
   ],
+  footerItems: [
+    {
+      label: "Promotions",
+      href: "/promotions",
+    },
+    {
+      label: "Partners",
+      href: "/partners",
+    },
+    {
+      label: "Legals",
+      href: "/legals",
+    },
+    {
+      label: "Privacy Policy",
+      href: "/privacy-policy",
+    },
+    {
+      label: "Terms & Conditions",
+      href: "/terms-conditions",
+      isHidden: false,
+    },
+    {
+      label: "Contact",
+      href: "/contact",
+    },
+  ],
   links: {
     github: "https://github.com/heroui-inc/heroui",
     twitter: "https://twitter.com/hero_ui",
