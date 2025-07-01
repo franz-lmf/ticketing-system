@@ -5,8 +5,7 @@ import { useTheme } from "next-themes";
 import { Button } from "@heroui/button";
 import { Link } from "@heroui/link";
 import { Drawer, DrawerContent } from "@heroui/drawer";
-
-import PlusIconCircle from "./icons/PlusIconCircle";
+import { MinusCircleIcon, PlusCircleIcon } from "@heroicons/react/24/outline";
 
 import {
   addToCart,
@@ -16,9 +15,12 @@ import {
   selectTotalPrice,
 } from "@/lib/ui/cart/cartSlice";
 import { useAppDispatch, useAppSelector } from "@/lib/hooks";
-import MinusIconCircle from "@/components/icons/MinusIconCircle";
 import { getHrefFromName } from "@/helpers/site.helpers";
-import { selectIsSidebarOpen, closeCartSidebar, toogleCartSidebar } from "@/lib/ui/cartSidebar/cartSidebarSlice"
+import {
+  selectIsSidebarOpen,
+  closeCartSidebar,
+  toogleCartSidebar,
+} from "@/lib/ui/cartSidebar/cartSidebarSlice";
 
 export default function CartSidebar() {
   const dispatch = useAppDispatch();
@@ -27,16 +29,16 @@ export default function CartSidebar() {
 
   const { theme } = useTheme();
 
-  const isSidebarOpen = useAppSelector(selectIsSidebarOpen)
+  const isSidebarOpen = useAppSelector(selectIsSidebarOpen);
 
   return (
     <Drawer
       hideCloseButton
       className={`${theme === "dark" ? "bg-gray-900 text-white" : "bg-white text-black"}`}
       isOpen={isSidebarOpen}
-      onOpenChange={() => dispatch(toogleCartSidebar())}
       placement="right"
       size="sm"
+      onOpenChange={() => dispatch(toogleCartSidebar())}
     >
       <DrawerContent>
         {(onClose) => (
@@ -70,7 +72,7 @@ export default function CartSidebar() {
                           variant="flat"
                           onPress={() => dispatch(removeFromCart(item))}
                         >
-                          <MinusIconCircle isOutline={true} />
+                          <MinusCircleIcon className="text-custom-accent size-6" />
                         </Button>
                         {item.quantity}
 
@@ -81,7 +83,7 @@ export default function CartSidebar() {
                           variant="flat"
                           onPress={() => dispatch(addToCart(item))}
                         >
-                          <PlusIconCircle isOutline={true} />
+                          <PlusCircleIcon className="text-custom-accent size-6" />
                         </Button>
 
                         <span className="font-medium">{item.title}</span>
@@ -114,11 +116,11 @@ export default function CartSidebar() {
               <div className="p-4 border-t border-gray-200 dark:border-gray-700">
                 <Button
                   as={Link}
-                  className="w-full bg-green-600 text-white py-2 rounded"
+                  className="w-full bg-custom-accent text-white py-2 rounded"
                   href={getHrefFromName("checkout")}
                   onPress={onClose}
                 >
-                  Checkout ₱{totalPrice.toFixed(2)}
+                  Proceed to Checkout ₱{totalPrice.toFixed(2)}
                 </Button>
               </div>
             )}
