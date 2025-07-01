@@ -1,49 +1,23 @@
 import Ticket from "@/components/Ticket";
-import { TicketDetails } from "@/interfaces/ticket.interface";
+import { tickets } from "@/lib/data/tickets";
 
 export default function Tickets() {
-  const tickets: TicketDetails[] = [
-    {
-      title: "Orange",
-      price: 5.5,
-    },
-    {
-      title: "Tangerine",
-      price: 3.0,
-    },
-    {
-      title: "Raspberry",
-      price: 10.0,
-    },
-    {
-      title: "Lemon",
-      price: 5.3,
-    },
-    {
-      title: "Avocado",
-      price: 15.7,
-    },
-    {
-      title: "Lemon 2",
-      price: 8.0,
-    },
-    {
-      title: "Banana",
-      price: 7.5,
-    },
-    {
-      title: "Watermelon",
-      price: 12.2,
-    },
-  ];
-
   return (
-    <div className="gap-2 grid grid-cols-2 sm:grid-cols-4">
+    // <div className="gap-2 grid grid-cols-2 sm:grid-cols-3 md:gap-5 lg:grid-cols-4 lg:gap-6">
+    <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
       {tickets.map((details) => (
         <Ticket
-          key={`ticket-${details.title}-${details.price}`}
+          key={`ticket-${details.title}-${details.id}`}
+          availableSeats={details.availableSeats}
+          category={details.category}
+          date={details.date}
+          description={details.description}
+          imageUrl={details.imageUrl}
+          location={details.location}
           price={details.price}
+          time={details.time}
           title={details.title}
+          totalSeats={details.totalSeats}
         />
       ))}
     </div>
