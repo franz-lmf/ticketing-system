@@ -25,7 +25,7 @@ import { GithubIcon, SearchIcon } from "@/components/shared/icons";
 import { selectTotalPrice } from "@/lib/ui/cart/cartSlice";
 import { useAppDispatch, useAppSelector } from "@/lib/hooks";
 import { SITE_HREF } from "@/config/site";
-import { openCartSidebar, toogleCartSidebar } from "@/lib/ui/cartSidebar/cartSidebarSlice";
+import { toogleCartSidebar } from "@/lib/ui/cartSidebar/cartSidebarSlice";
 
 export const Navbar = () => {
   const dispatch = useAppDispatch();
@@ -155,10 +155,11 @@ export const Navbar = () => {
         Open Cart
       </Button> */}
 
-      {pathname !== SITE_HREF.checkout && (
+      {pathname !== SITE_HREF.checkout && pathname !== SITE_HREF.home && (
         <Btn
           btnType={BTN_TYPES.cart}
-          color="success"
+          className="bg-custom-accent"
+          color="custom-accent"
           isIconOnly={totalPrice <= 0}
           onPress={() => dispatch(toogleCartSidebar())}
         >
