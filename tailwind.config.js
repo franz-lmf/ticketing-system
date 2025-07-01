@@ -18,7 +18,8 @@ const config = {
         'custom-primary': '#0e102d',
         'custom-secondary': '#1a1c3d',
         'custom-accent': '#D1601E',
-        'custom-accent-secondary': '#273890',
+        // 'custom-accent-secondary': '#273890',
+        'custom-accent-secondary': '#192669',
         'custom-background-secondary': '#2BOFOE',
       }
     },
