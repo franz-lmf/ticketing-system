@@ -9,11 +9,9 @@ import { UI_CONSTANTS } from "@/lib/constants/ui-constants";
 import { Button } from "@heroui/button";
 
 const CopyrightWrapper = () => {
-  const { copyrightBGColor } = UI_CONSTANTS.footer;
-
   return (
     <div
-      className={`w-full py-4 text-center items-center text-sm text-default-500 bg-[${copyrightBGColor}]`}
+      className={`w-full py-4 text-center items-center text-sm text-default-500 bg-custom-background`}
     >
       <span>© {new Date().getFullYear()} </span>
       <Link className="text-default-600 hover:text-default-800" href="/">
@@ -77,7 +75,7 @@ const AppFooter = () => {
   const { twitter, discord, github } = siteConfig.links;
 
   return (
-    <footer className="w-full flex-col items-center justify-center pt-3">
+    <footer className="w-full flex-col items-center justify-center pt-3 bg-[url(/img/footer_bg.jpg)] bg-cover bg-center bg-no-repeat">
       <MailingListWrapper />
       <div className="container mx-auto max-w-7xl px-6 py-10 bg-[#OE102D]">
         <div className="flex-row justify-between items-center sm:flex">
