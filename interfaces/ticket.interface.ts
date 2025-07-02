@@ -2,14 +2,15 @@ export interface TicketDetails {
   id?: string;
   title: string;
   description?: string;
-  imageUrl?: string;
-  date?: string;
-  time?: string;
-  location?: string;
+  imageUrl: string;
+  date: string;
+  time: string;
+  location: string;
   category?: string;
   availableSeats?: number;
   totalSeats?: number;
   price: number;
+  slug?: string;
 }
 
 export interface CartItem extends TicketDetails {
