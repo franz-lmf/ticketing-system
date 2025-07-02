@@ -1,13 +1,17 @@
-
-.ticket-details-container {}
+.ticket-details-container {
+  @apply bg-slate-600 p-5 min-w-80
+}
 .body {
   @apply mt-2;
 }
 .eyebrow-headline {
-  @apply text-custom-accent font-medium capitalize text-xl;
+  @apply text-custom-accent font-medium capitalize text-lg;
+}
+.ticket-info-image {
+  @apply z-0 w-64 min-w-72 h-full object-cover transition-transform duration-300 group-hover:scale-105 group-hover:brightness-75 group-hover:blur-sm mx-auto
 }
 .headline {
-  @apply text-8xl md:text-7xl font-bold capitalize;
+  @apply text-7xl lg:text-7xl font-bold capitalize mt-3;
 }
 .description {
   @apply font-light;
