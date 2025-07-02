@@ -15,12 +15,12 @@ const config = {
       },
       colors: {
         'custom-background': '#0E102D',
+        // 'custom-background-secondary': '#251728',
         'custom-primary': '#0e102d',
         'custom-secondary': '#1a1c3d',
         'custom-accent': '#D1601E',
-        // 'custom-accent-secondary': '#273890',
-        'custom-accent-secondary': '#192669',
-        'custom-background-secondary': '#2BOFOE',
+        'custom-accent-secondary': '#273890',
+        'custom-background-secondary': '#2B0F0E',
       }
     },
   },
