@@ -1,8 +1,9 @@
+import { generateRandomId } from "@/helpers/generators.helpers";
 import { TicketDetails } from "@/interfaces/ticket.interface";
 
 export const tickets: TicketDetails[] = [
   {
-    id: crypto.randomUUID(),
+    id: generateRandomId(),
     title: "Hyeri",
     slug: "hyeri",
     price: 8.5,
@@ -17,7 +18,7 @@ export const tickets: TicketDetails[] = [
     totalSeats: 5000,
   },
   // {
-  //   id: crypto.randomUUID(),
+  //   id: generateRandomId(),
   //   title: "Kai",
   //   price: 12.0,
   //   imageUrl: "/img/tickets/kai-event-poster.jpg",
@@ -30,7 +31,7 @@ export const tickets: TicketDetails[] = [
   //   totalSeats: 4000,
   // },
   {
-    id: crypto.randomUUID(),
+    id: generateRandomId(),
     title: "Blackpink",
     price: 10.0,
     imageUrl: "/img/tickets/blackpink-event-poster.jpg",
@@ -43,7 +44,7 @@ export const tickets: TicketDetails[] = [
     totalSeats: 6000,
   },
   {
-    id: crypto.randomUUID(),
+    id: generateRandomId(),
     title: "Aerosmith",
     price: 15.0,
     imageUrl: "/img/tickets/aerosmith-event-poster.jpg",
@@ -56,7 +57,7 @@ export const tickets: TicketDetails[] = [
     totalSeats: 10000,
   },
   {
-    id: crypto.randomUUID(),
+    id: generateRandomId(),
     title: "Baby Metal",
     price: 5.5,
     imageUrl: "/img/tickets/baby-metal-event-poster.jpg",
@@ -69,7 +70,7 @@ export const tickets: TicketDetails[] = [
     totalSeats: 10000,
   },
   {
-    id: crypto.randomUUID(),
+    id: generateRandomId(),
     title: "Bon Jovi",
     price: 9.0,
     imageUrl: "/img/tickets/bon-jovi-event-poster.png",
@@ -82,7 +83,7 @@ export const tickets: TicketDetails[] = [
     totalSeats: 8000,
   },
   {
-    id: crypto.randomUUID(),
+    id: generateRandomId(),
     title: "Europe",
     price: 8.0,
     imageUrl: "/img/tickets/europe-event-poster.jpg",
@@ -95,7 +96,7 @@ export const tickets: TicketDetails[] = [
     totalSeats: 7000,
   },
   {
-    id: crypto.randomUUID(),
+    id: generateRandomId(),
     title: "Guns N' Roses",
     price: 20.0,
     imageUrl: "/img/tickets/guns-n-roses-event-poster.jpg",
@@ -108,7 +109,7 @@ export const tickets: TicketDetails[] = [
     totalSeats: 12000,
   },
   {
-    id: crypto.randomUUID(),
+    id: generateRandomId(),
     title: "Kiss",
     price: 22.0,
     imageUrl: "/img/tickets/kiss-event-poster.jpg",
@@ -121,7 +122,7 @@ export const tickets: TicketDetails[] = [
     totalSeats: 10000,
   },
   {
-    id: crypto.randomUUID(),
+    id: generateRandomId(),
     title: "Metallica",
     price: 18.0,
     imageUrl: "/img/tickets/metallica-event-poster.jpg",
@@ -134,7 +135,7 @@ export const tickets: TicketDetails[] = [
     totalSeats: 15000,
   },
   {
-    id: crypto.randomUUID(),
+    id: generateRandomId(),
     title: "Roxette",
     price: 10.0,
     imageUrl: "/img/tickets/roxette-event-poster.jpeg",
@@ -147,7 +148,7 @@ export const tickets: TicketDetails[] = [
     totalSeats: 6000,
   },
   {
-    id: crypto.randomUUID(),
+    id: generateRandomId(),
     title: "Skid Row",
     price: 7.5,
     imageUrl: "/img/tickets/skid-row-event-poster.jpg",
@@ -160,7 +161,7 @@ export const tickets: TicketDetails[] = [
     totalSeats: 6000,
   },
   {
-    id: crypto.randomUUID(),
+    id: generateRandomId(),
     title: "Steelheart",
     price: 6.0,
     imageUrl: "/img/tickets/steelheart-event-poster.png",

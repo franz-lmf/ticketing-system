@@ -5,6 +5,7 @@ import {
   CartItem,
   TicketDetails,
 } from "@/interfaces/ticket.interface";
+import { generateRandomId } from "@/helpers/generators.helpers";
 
 export const initialCartState: CartDetails = {
   items: [],
@@ -25,7 +26,7 @@ export const cartSlice = createSlice({
       if (!existingItem) {
         const newItem: CartItem = {
           ...action.payload,
-          id: action.payload.id || crypto.randomUUID(),
+          id: action.payload.id || generateRandomId(),
           quantity: 1,
         };
 

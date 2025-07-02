@@ -7,11 +7,14 @@ import { title } from "@/components/primitives";
 import TicketInfo from "@/components/TicketInfo";
 import { tickets } from "@/lib/data/tickets";
 import { TicketDetails } from "@/interfaces/ticket.interface";
+import { normalize } from "@/helpers/string.helpers";
 
 export default function EventDetailsPage() {
   const { slug } = useParams();
   const ticketDetail: TicketDetails | undefined = tickets.find(
-    (ticket) => ticket?.slug === slug || ticket.title.toLowerCase() === slug,
+    (ticket) =>
+      normalize(ticket?.slug ?? "") === normalize(slug as string) ||
+      normalize(ticket.title) === normalize(slug as string),
   );
 
   if (!ticketDetail) {
