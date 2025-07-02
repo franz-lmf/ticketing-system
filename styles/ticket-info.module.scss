@@ -1,0 +1,14 @@
+
+.ticket-details-container {}
+.body {
+  @apply mt-2;
+}
+.eyebrow-headline {
+  @apply text-custom-accent font-medium capitalize text-xl;
+}
+.headline {
+  @apply text-8xl md:text-7xl font-bold capitalize;
+}
+.description {
+  @apply font-light;
+}
