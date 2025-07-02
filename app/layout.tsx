@@ -34,22 +34,33 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const backgroundImageClasses =
+    "bg-[url(/img/rock-band-splash.jpg)] bg-cover bg-center bg-no-repeat";
+
   return (
     <StoreProvider>
       <html suppressHydrationWarning lang="en">
         <head />
         <body
           className={`${clsx(
-            "min-h-screen text-foreground bg-background font-sans antialiased",
+            "min-h-screen text-foreground font-sans antialiased",
             fontSans.variable,
-          )}  bg-[url(/img/rock-band-splash.jpg)] bg-cover bg-center bg-no-repeat `}
+            // backgroundImageClasses,
+          )}`}
         >
+          {/* Background image layer */}
+          <div
+            aria-hidden="true"
+            className={`fixed inset-0 -z-10 ${backgroundImageClasses} blur-sm`}
+          />
+
           <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
-            <div className="relative flex flex-col h-screen backdrop-blur-none bg-white/30 dark:bg-black/30">
+            {/* backdrop-blur-none bg-white/30 dark:bg-black/30 */}
+            <div className="relative flex flex-col h-0 bg-transparent">
               <Navbar />
 
               <CartSidebar />
-              <main className="container mx-auto max-w-7xl pt-16 px-6 flex-grow">
+              <main className="container mx-auto max-w-7xl pt-16 px-6 flex-grow bg-transparent">
                 {children}
               </main>
               <AppFooter />
