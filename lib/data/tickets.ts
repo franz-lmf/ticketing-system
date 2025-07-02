@@ -4,9 +4,11 @@ export const tickets: TicketDetails[] = [
   {
     id: crypto.randomUUID(),
     title: "Hyeri",
+    slug: "hyeri",
     price: 8.5,
     imageUrl: "/img/tickets/hyeri-event-poster.jpg",
-    description: "An exclusive event with Hyeri.",
+    description:
+      "2025 HYERI FANMEETING TOUR -Welcome to HYERI's STUDIO- in MANILA",
     date: "2023-12-15",
     time: "20:00",
     location: "Seoul, South Korea",
