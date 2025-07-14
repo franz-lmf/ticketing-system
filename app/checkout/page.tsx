@@ -4,10 +4,13 @@ import { useState } from "react";
 import { Input } from "@heroui/input";
 import { Button } from "@heroui/button";
 import { Card } from "@heroui/card";
+import { LockClosedIcon } from "@heroicons/react/24/outline";
 
 import { title } from "@/components/primitives";
 import { useAppSelector } from "@/lib/hooks";
 import { selectTotalPrice } from "@/lib/ui/cart/cartSlice";
+
+// LockClosed
 
 export default function CheckoutPage() {
   const totalPrice = useAppSelector(selectTotalPrice);
@@ -112,8 +115,13 @@ export default function CheckoutPage() {
             />
           </div>
         </Card>
-        <Button className="w-full" color="success" type="submit">
-          Place Order ₱{totalPrice.toFixed(2)}
+        <Button
+          className="w-full text-white py-2"
+          color="secondary"
+          startContent={<LockClosedIcon className=" size-5" />}
+          type="submit"
+        >
+          Place Order &nbsp;₱{totalPrice.toFixed(2)}
         </Button>
       </form>
     </div>
