@@ -33,7 +33,7 @@ export default function TicketCard(props: TicketDetails) {
   return (
     <Card
       isFooterBlurred
-      className="group relative w-[280px] overflow-hidden bg-transparent outline outline-custom-accent rounded-b-3xl"
+      className="group relative w-[350px] overflow-hidden bg-transparent  outline-custom-primary rounded-b-3xl"
       shadow="sm"
       onPress={() => {
         if (title) {
@@ -45,6 +45,10 @@ export default function TicketCard(props: TicketDetails) {
         }
       }}
     >
+      {/* <div className="bg-primary w-1/4 absolute right-0 h-full z-10 flex items-center justify-center text-white font-bold text-lg rounded-bl-none rounded-tl-none group-hover:bg-primary/90 transition-colors duration-300 px-3">
+        <DownloadIcon className="size-6" />
+        Buy Tickets
+      </div> */}
       <div className="relative w-full h-full">
         <Image
           removeWrapper
@@ -57,7 +61,8 @@ export default function TicketCard(props: TicketDetails) {
         <div className="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
           {/* <p>{description}</p> */}
           <Button
-            className="bg-custom-accent hover:bg-custom-accent/90 text-white text-lg px-8 py-3 rounded-full shadow-lg mt-10"
+            className="hover:bg-primary/90 text-white text-lg px-8 py-3 rounded-full shadow-lg mt-10"
+            color="primary"
             size="lg"
             onPress={() => {
               dispatch(addToCart({ ...props }));
@@ -66,7 +71,7 @@ export default function TicketCard(props: TicketDetails) {
             Buy Ticket
           </Button>
           <Button
-            className="bg-custom-accent-secondary hover:bg-custom-accent-secondary/90 text-white text-lg px-8 py-3 rounded-full shadow-lg mt-5"
+            className="bg-info hover:bg-info/90 text-white text-lg px-8 py-3 rounded-full shadow-lg mt-5"
             endContent={<OpenLink className="size-6" />}
             size="lg"
             onPress={() => {
@@ -84,11 +89,12 @@ export default function TicketCard(props: TicketDetails) {
         </div>
       </div>
 
-      <div className="details-wrapper px-2 py-3 bg-transparent">
+      {/* Relevant Ticket Info */}
+      <div className="details-wrapper px-4 py-6 bg-text-background">
         <div className="flex items-center justify-between">
-          <p className="text-xl font-semibold text-white/80 text-left">
+          <h1 className="text-2xl font-bold text-white/80 text-left py-2">
             {title}
-          </p>
+          </h1>
           {/* <ChevronDownIcon className="size-6" /> */}
         </div>
         {/* <div className="flex flex-col">
@@ -96,23 +102,24 @@ export default function TicketCard(props: TicketDetails) {
         <div className="flex-col gap-2 items-center text-white/60 mt-2">
           <div className="flex w-full justify-between items-center">
             <div className="flex">
-              <CalendarIcon className="text-custom-accent size-6" />
-              <span className="ml-2">{date}</span>
+              <CalendarIcon className="text-custom-primary size-6" />
+              <span className="ml-2 font-normal">{date}</span>
             </div>
-            <div className="flex">
-              <ClockIcon className="text-custom-accent size-6" />
-              <span className="ml-2">{time}</span>
-            </div>
+            {/* <div className="flex">
+              <ClockIcon className="text-custom-primary size-6" />
+              <span className="ml-2 font-normal">{time}</span>
+            </div> */}
           </div>
-          <div className="flex w-full items-center mt-1">
-            <MapPinIcon className="text-custom-accent size-6" />
-            <span className="ml-2">{location}</span>
+          <div className="flex w-full items-center mt-3">
+            <MapPinIcon className="text-custom-primary size-6" />
+            <span className="ml-2 font-normal">{location}</span>
           </div>
         </div>
       </div>
       <Button
-        className="bg-custom-accent hover:bg-custom-accent/90 text-white rounded-b-3xl rounded-t-none"
+        className="hover:bg-primary/90 text-white rounded-b-3xl rounded-t-none py-6"
         size="lg"
+        color="primary"
         startContent={<DownloadIcon className="size-6" />}
         onPress={() => {
           dispatch(addToCart({ ...props }));
@@ -120,6 +127,7 @@ export default function TicketCard(props: TicketDetails) {
       >
         <span>₱{price.toFixed(2)}</span>
       </Button>
+
       {/* <CardFooter className="absolute bg-black/40 bottom-0 z-10 border-t-1 border-default-600 dark:border-default-100">
         <div className="flex flex-grow gap-2 items-center">
           <div className="flex flex-col">
@@ -127,8 +135,9 @@ export default function TicketCard(props: TicketDetails) {
           </div>
         </div>
         <Button
-          className="bg-custom-accent hover:bg-custom-accent/90 text-white"
+          className=" hover:bg-primary/90 text-white"
           size="sm"
+          color="primary"
           startContent={<DownloadIcon isOutline={false} />}
           onPress={() => {
             dispatch(addToCart({ title, price }));
