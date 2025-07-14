@@ -45,7 +45,7 @@ const LinksWrapper = () => {
 
 const MailingListWrapper = () => {
   return (
-    <div className="bg-custom-accent p-12 px-14">
+    <div className="bg-primary p-12 px-14">
       <div className="container grid md:grid-cols-2 gap-2 mx-8">
         <div className="">
           <h1 className="font-extrabold text-3xl uppercase">Receive news and updates.</h1>

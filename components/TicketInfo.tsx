@@ -39,12 +39,12 @@ const TicketInfo = (ticketDetail: TicketDetails) => {
         </div>
         <h1 className="my-5 md:mt-auto">
           <span className="font-light text-4xl md:text-5xl mr-1 mt-5">₱</span>
-          <span className="font-normal text-custom-accent text-6xl md:text-7xl">
+          <span className="font-normal text-primary text-6xl md:text-7xl">
             {price.toFixed(2)}
           </span>
         </h1>
       </div>
-      <div className="bg-custom-accent min-w-14 w-48">
+      <div className="bg-primary min-w-14 w-48">
         <p>Buy Tickets</p>
       </div>
     </div>

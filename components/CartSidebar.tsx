@@ -72,7 +72,7 @@ export default function CartSidebar() {
                           variant="flat"
                           onPress={() => dispatch(removeFromCart(item))}
                         >
-                          <MinusCircleIcon className="text-custom-accent size-6" />
+                          <MinusCircleIcon className="text-primary size-6" />
                         </Button>
                         {item.quantity}
 
@@ -83,7 +83,7 @@ export default function CartSidebar() {
                           variant="flat"
                           onPress={() => dispatch(addToCart(item))}
                         >
-                          <PlusCircleIcon className="text-custom-accent size-6" />
+                          <PlusCircleIcon className="text-primary size-6" />
                         </Button>
 
                         <span className="font-medium">{item.title}</span>
@@ -99,14 +99,14 @@ export default function CartSidebar() {
                 <span className="text-sm">
                   Want to start over?
                   <Button
-                    className="ml-1 px-1 font-bold text-red-600 hover:text-red-500 dark:text-red-400 dark:hover:text-red-200 bg-transparent"
+                    className="ml-1 px-1 font-bold text-primary hover:brightness-125 bg-transparent"
                     variant="flat"
                     onPress={() => {
                       dispatch(clearCart());
                       dispatch(closeCartSidebar());
                     }}
                   >
-                    Empty Cart
+                    Empty Cart?
                   </Button>
                 </span>
               </div>
@@ -116,7 +116,8 @@ export default function CartSidebar() {
               <div className="p-4 border-t border-gray-200 dark:border-gray-700">
                 <Button
                   as={Link}
-                  className="w-full bg-custom-accent text-white py-2 rounded"
+                  className="w-full text-white py-2 rounded"
+                  color="secondary"
                   href={getHrefFromName("checkout")}
                   onPress={onClose}
                 >
