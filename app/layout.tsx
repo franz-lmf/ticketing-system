@@ -34,8 +34,9 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const backgroundImage = "bg-[url(/img/featured/kiss-hero-img.jpg)]";
   const backgroundImageClasses =
-    "bg-[url(/img/rock-band-splash.jpg)] bg-cover bg-center bg-no-repeat";
+    "absolute inset-0 -z-10 bg-cover bg-center bg-no-repeat grayscale";
 
   return (
     <StoreProvider>
@@ -51,7 +52,8 @@ export default function RootLayout({
           {/* Background image layer */}
           <div
             aria-hidden="true"
-            className={`fixed inset-0 -z-10 ${backgroundImageClasses} blur-sm`}
+            className={`${backgroundImage} ${backgroundImageClasses} blur- `}
+            style={{ backgroundAttachment: "scroll" }}
           />
 
           <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
