@@ -9,10 +9,8 @@ import { GithubIcon } from "@/components/shared/icons";
 
 export default function Home() {
   return (
-    <section className="flex flex-col items-center justify-center gap-4 py-8 md:py-10 h-screen">
-      <div className="inline-block max-w-xl text-center justify-center">
-
-      </div>
+    <section className="flex h-screen flex-col items-center justify-center gap-4 py-8 md:py-10">
+      <div className="inline-block max-w-xl justify-center text-center"></div>
 
       {/* <div className="inline-block max-w-xl text-center justify-center">
         <span className={title()}>Make&nbsp;</span>

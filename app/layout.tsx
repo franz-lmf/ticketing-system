@@ -44,7 +44,7 @@ export default function RootLayout({
         <head />
         <body
           className={`${clsx(
-            "min-h-screen text-foreground font-sans antialiased",
+            "min-h-screen font-sans text-foreground antialiased",
             fontSans.variable,
             // backgroundImageClasses,
           )}`}
@@ -52,17 +52,17 @@ export default function RootLayout({
           {/* Background image layer */}
           <div
             aria-hidden="true"
-            className={`${backgroundImage} ${backgroundImageClasses} blur- `}
+            className={`${backgroundImage} ${backgroundImageClasses} blur-`}
             style={{ backgroundAttachment: "scroll" }}
           />
 
           <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
             {/* backdrop-blur-none bg-white/30 dark:bg-black/30 */}
-            <div className="relative flex flex-col h-0 bg-transparent">
+            <div className="relative flex h-0 flex-col bg-transparent">
               <Navbar />
 
               <CartSidebar />
-              <main className="container mx-auto max-w-7xl pt-16 px-6 flex-grow bg-transparent">
+              <main className="container mx-auto max-w-7xl flex-grow bg-transparent px-6 pt-16">
                 {children}
               </main>
               <AppFooter />

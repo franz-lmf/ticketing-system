@@ -33,7 +33,7 @@ export default function TicketCard(props: TicketDetails) {
   return (
     <Card
       isFooterBlurred
-      className="group relative w-[350px] overflow-hidden bg-transparent  outline-custom-primary rounded-b-3xl"
+      className="outline-custom-primary group relative w-[350px] overflow-hidden rounded-b-3xl bg-transparent"
       shadow="sm"
       onPress={() => {
         if (title) {
@@ -49,19 +49,19 @@ export default function TicketCard(props: TicketDetails) {
         <DownloadIcon className="size-6" />
         Buy Tickets
       </div> */}
-      <div className="relative w-full h-full">
+      <div className="relative h-full w-full">
         <Image
           removeWrapper
           alt="Card background"
-          className="z-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-105 group-hover:brightness-75 group-hover:blur-sm rounded-t-xl rounded-b-none"
+          className="z-0 h-full w-full rounded-b-none rounded-t-xl object-cover transition-transform duration-300 group-hover:scale-105 group-hover:blur-sm group-hover:brightness-75"
           src={imageUrl}
         />
 
         {/* Overlay for Buy Ticket button on hover */}
-        <div className="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+        <div className="absolute inset-0 flex flex-col items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
           {/* <p>{description}</p> */}
           <Button
-            className="hover:bg-primary/90 text-white text-lg px-8 py-3 rounded-full shadow-lg mt-10"
+            className="mt-10 rounded-full px-8 py-3 text-lg text-white shadow-lg hover:bg-primary/90"
             color="primary"
             size="lg"
             onPress={() => {
@@ -71,7 +71,7 @@ export default function TicketCard(props: TicketDetails) {
             Buy Ticket
           </Button>
           <Button
-            className="bg-info hover:bg-info/90 text-white text-lg px-8 py-3 rounded-full shadow-lg mt-5"
+            className="mt-5 rounded-full bg-info px-8 py-3 text-lg text-white shadow-lg hover:bg-info/90"
             endContent={<OpenLink className="size-6" />}
             size="lg"
             onPress={() => {
@@ -90,17 +90,17 @@ export default function TicketCard(props: TicketDetails) {
       </div>
 
       {/* Relevant Ticket Info */}
-      <div className="details-wrapper px-4 py-6 bg-text-background">
+      <div className="details-wrapper bg-text-background px-4 py-6">
         <div className="flex items-center justify-between">
-          <h1 className="text-2xl font-bold text-white/80 text-left py-2">
+          <h1 className="py-2 text-left text-2xl font-bold text-white/80">
             {title}
           </h1>
           {/* <ChevronDownIcon className="size-6" /> */}
         </div>
         {/* <div className="flex flex-col">
         </div> */}
-        <div className="flex-col gap-2 items-center text-white/60 mt-2">
-          <div className="flex w-full justify-between items-center">
+        <div className="mt-2 flex-col items-center gap-2 text-white/60">
+          <div className="flex w-full items-center justify-between">
             <div className="flex">
               <CalendarIcon className="text-custom-primary size-6" />
               <span className="ml-2 font-normal">{date}</span>
@@ -110,14 +110,14 @@ export default function TicketCard(props: TicketDetails) {
               <span className="ml-2 font-normal">{time}</span>
             </div> */}
           </div>
-          <div className="flex w-full items-center mt-3">
+          <div className="mt-3 flex w-full items-center">
             <MapPinIcon className="text-custom-primary size-6" />
             <span className="ml-2 font-normal">{location}</span>
           </div>
         </div>
       </div>
       <Button
-        className="hover:bg-primary/90 text-white rounded-b-3xl rounded-t-none py-6"
+        className="rounded-b-3xl rounded-t-none py-6 text-white hover:bg-primary/90"
         size="lg"
         color="primary"
         startContent={<DownloadIcon className="size-6" />}

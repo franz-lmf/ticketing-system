@@ -38,11 +38,11 @@ export default function CheckoutPage() {
   };
 
   return (
-    <div className="max-w-xl mx-auto pb-10">
+    <div className="mx-auto max-w-xl pb-10">
       <h1 className={title()}>Checkout</h1>
-      <form className="space-y-6 mt-8" onSubmit={handleSubmit}>
-        <Card className="p-6 space-y-4">
-          <h2 className="text-lg font-semibold mb-2">User Details</h2>
+      <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
+        <Card className="space-y-4 p-6">
+          <h2 className="mb-2 text-lg font-semibold">User Details</h2>
           <Input
             required
             label="Name"
@@ -76,8 +76,8 @@ export default function CheckoutPage() {
             onChange={handleChange}
           />
         </Card>
-        <Card className="p-6 space-y-4">
-          <h2 className="text-lg font-semibold mb-2">Credit Card Payment</h2>
+        <Card className="space-y-4 p-6">
+          <h2 className="mb-2 text-lg font-semibold">Credit Card Payment</h2>
           <Input
             required
             label="Card Number"
@@ -116,9 +116,9 @@ export default function CheckoutPage() {
           </div>
         </Card>
         <Button
-          className="w-full text-white py-2"
+          className="w-full py-8 text-lg font-medium text-white"
           color="secondary"
-          startContent={<LockClosedIcon className=" size-5" />}
+          startContent={<LockClosedIcon className="size-6" />}
           type="submit"
         >
           Place Order &nbsp;₱{totalPrice.toFixed(2)}

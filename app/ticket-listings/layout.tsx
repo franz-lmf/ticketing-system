@@ -5,7 +5,7 @@ export default function TicketListingLayout({
 }) {
   return (
     <section className="flex flex-col items-center justify-center gap-6 pb-10">
-      <div className="inline-block max-w-6xl text-center justify-center min-h-screen">
+      <div className="inline-block min-h-screen max-w-6xl justify-center text-center">
         {children}
       </div>
     </section>

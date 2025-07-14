@@ -16,10 +16,10 @@ export default function ContactUsPage() {
   };
 
   return (
-    <div className="max-w-xl mx-auto mt-10">
+    <div className="mx-auto mt-10 max-w-xl">
       <Card className="bg-gray-900 text-white">
         <CardHeader>
-          <h1 className="text-2xl font-bold mb-2 mx-auto my-5">Contact Us</h1>
+          <h1 className="mx-auto my-5 mb-2 text-2xl font-bold">Contact Us</h1>
         </CardHeader>
         <CardBody>
           <form className="flex flex-col gap-6">

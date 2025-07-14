@@ -43,16 +43,16 @@ export default function CartSidebar() {
       <DrawerContent>
         {(onClose) => (
           <>
-            <div className="flex justify-between items-center p-4 border-b border-gray-200 dark:border-gray-700">
+            <div className="flex items-center justify-between border-b border-gray-200 p-4 dark:border-gray-700">
               <h2 className="text-lg font-bold">Your Cart</h2>
               <button
-                className="text-gray-500 hover:text-black dark:hover:text-white text-2xl"
+                className="text-2xl text-gray-500 hover:text-black dark:hover:text-white"
                 onClick={() => dispatch(closeCartSidebar())}
               >
                 &times;
               </button>
             </div>
-            <div className="p-4 flex-1 overflow-y-auto">
+            <div className="flex-1 overflow-y-auto p-4">
               {items.length === 0 ? (
                 <p className="text-gray-400 dark:text-gray-500">
                   Your cart is empty.
@@ -62,7 +62,7 @@ export default function CartSidebar() {
                   {items.map((item, idx) => (
                     <li
                       key={idx}
-                      className={`flex justify-between items-center${idx !== items.length - 1 ? " mb-4" : ""}`}
+                      className={`flex justify-between items-center${idx !== items.length - 1 ? "mb-4" : ""}`}
                     >
                       <div className="flex items-center">
                         <Button
@@ -72,7 +72,7 @@ export default function CartSidebar() {
                           variant="flat"
                           onPress={() => dispatch(removeFromCart(item))}
                         >
-                          <MinusCircleIcon className="text-primary size-6" />
+                          <MinusCircleIcon className="size-6 text-primary" />
                         </Button>
                         {item.quantity}
 
@@ -83,7 +83,7 @@ export default function CartSidebar() {
                           variant="flat"
                           onPress={() => dispatch(addToCart(item))}
                         >
-                          <PlusCircleIcon className="text-primary size-6" />
+                          <PlusCircleIcon className="size-6 text-primary" />
                         </Button>
 
                         <span className="font-medium">{item.title}</span>
@@ -95,11 +95,11 @@ export default function CartSidebar() {
               )}
             </div>
             {items.length > 0 && (
-              <div className="p-4 border-t border-gray-200 dark:border-gray-700">
+              <div className="border-t border-gray-200 p-4 dark:border-gray-700">
                 <span className="text-sm">
                   Want to start over?
                   <Button
-                    className="ml-1 px-1 font-bold text-primary hover:brightness-125 bg-transparent"
+                    className="ml-1 bg-transparent px-1 font-bold text-primary hover:brightness-125"
                     variant="flat"
                     onPress={() => {
                       dispatch(clearCart());
@@ -113,10 +113,10 @@ export default function CartSidebar() {
             )}
 
             {items.length > 0 && (
-              <div className="p-4 border-t border-gray-200 dark:border-gray-700">
+              <div className="border-t border-gray-200 p-4 dark:border-gray-700">
                 <Button
                   as={Link}
-                  className="w-full text-white py-2 rounded"
+                  className="w-full rounded py-2 text-white"
                   color="secondary"
                   href={getHrefFromName("checkout")}
                   onPress={onClose}

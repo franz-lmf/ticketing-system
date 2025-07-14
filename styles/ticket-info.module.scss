@@ -1,17 +1,17 @@
 .ticket-details-container {
-  @apply bg-text-background p-5 min-w-80
+  @apply min-w-80 bg-text-background p-5;
 }
 .body {
   @apply mt-2;
 }
 .eyebrow-headline {
-  @apply text-primary font-medium capitalize text-lg;
+  @apply text-lg font-medium capitalize text-primary;
 }
 .ticket-info-image {
-  @apply z-0 w-64 min-w-72 h-full object-cover transition-transform duration-300 group-hover:scale-105 group-hover:brightness-75 group-hover:blur-sm mx-auto
+  @apply z-0 mx-auto h-full w-64 min-w-72 object-cover transition-transform duration-300 group-hover:scale-105 group-hover:blur-sm group-hover:brightness-75;
 }
 .headline {
-  @apply text-7xl lg:text-7xl font-bold capitalize mt-3;
+  @apply mt-3 text-7xl font-bold capitalize lg:text-7xl;
 }
 .description {
   @apply font-light;
